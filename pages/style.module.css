@@ -1,0 +1,45 @@
+.select {
+  padding: 4px;
+  box-sizing: border-box;
+  width: 70%;
+  margin-bottom: 15px;
+}
+
+.innerSelect {
+  padding: 4px;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+.innerDiv {
+  margin-top: 40px;
+  padding: 20px;
+  border: 2px dotted;
+  border-radius: 5px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.selectDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 150px;
+}
+.option {
+  text-align: center;
+}
+
+.p {
+  position: absolute;
+  margin-top: 200px;
+}

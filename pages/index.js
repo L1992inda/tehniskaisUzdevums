@@ -1,9 +1,9 @@
-import App from "./selectedItem"
+import App from "./app";
 
 const Index = () => (
-    <div>
-      <App/>
-    </div>
-  )
-  
-  export default Index;
+  <div>
+    <App />
+  </div>
+);
+
+export default Index;
