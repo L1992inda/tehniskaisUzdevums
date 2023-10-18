@@ -20,32 +20,25 @@ export default function App() {
   const currentItem = sample.items.find((item) => item.code === selectedItem);
 
   const itemGeneratedCode = () => {
+    let generatedCode = "";
     if (currentItem) {
-      let generatedCode = "";
-      const selectedOptions = currentItem.varieties.map((code, index) => {
-        const variety = sample.varieties.find((v) => v.code === code);
-        const selectedOption = variety.options.find(
-          (option) => option.code === selectedItemVariety[index]
-        );
-        if (selectedOption) {
-          return selectedOption.code;
-        }
-        return "";
-      });
-      generatedCode = `${currentItem.code}.${selectedOptions.join(".")}`;
+      generatedCode = `${currentItem.code}`;
+      if (selectedItemVariety.length > 0) {
+        generatedCode += `.${selectedItemVariety.join(".")}`;
+      }
       return generatedCode;
     }
-    return "";
   };
 
   const generatedCodeFunctionCall = () => {
-    if (selectedItem && currentItem.varieties) {
-      if (selectedItemVariety.length === currentItem.varieties.length) {
-        if (selectedItemVariety.every((variety) => variety !== ""))
-          return itemGeneratedCode();
-      }
+    if (
+      selectedItem &&
+      currentItem.varieties &&
+      selectedItemVariety.length === currentItem.varieties.length &&
+      selectedItemVariety.every((variety) => variety !== "")
+    ) {
+      return itemGeneratedCode();
     }
-    return "";
   };
 
   return (
